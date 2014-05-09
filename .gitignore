@@ -14,3 +14,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+*.lock
+*.[0-9]
+*.ns
+*.save
