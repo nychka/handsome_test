@@ -1,0 +1,11 @@
+<h1><%= @hotel.title %></h1>
+<h2>Середній рейтинг: <%= @hotel.average_rate %></h2>
+<%= @hotel.ratings.each do |rating| %>
+  <div class="rating">
+    <span>Rate: </span><span><%= rating.rate %></span><br />
+    <span>User: </span><span>
+       <%= rating.user_id %>
+       <% if current_user.id == rating.user_id %>(Me)  <% end %>
+    </span><br />
+  </div>
+<% end %>

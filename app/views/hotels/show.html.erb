@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @hotel.title %>
+</p>
+
+<p>
+  <strong>Star rating:</strong>
+  <%= @hotel.star_rating %>
+</p>
+
+<p>
+  <strong>breakfast included:</strong>
+  <%= @hotel.breakfast_included %>
+</p>
+
+<p>
+  <strong>Room description:</strong>
+  <%= @hotel.room_description %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= image_tag @hotel.photo_url(:thumb) %>
+</p>
+
+<p>
+  <strong>Price for room:</strong>
+  <%= @hotel.price_for_room %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @hotel.address.country %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @hotel.address.state %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @hotel.address.city %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @hotel.address.street %>
+</p>
+
+<div>
+  <h3>Оцініть готель:</h3>
+  <%= form_for([@hotel, @rating]) do |f|%>
+    <% if @rating.rate %>
+      <p><%= @rating.rate %></p>
+    <% else %>
+      <%= f.select(:rate, (1..5).to_a) %>
+      <%= f.submit %>
+    <% end %>
+  <% end %>
+</div>
+
+<%= render partial: 'comments/new', :object => [@hotel, @comment]  %>
+<%= render partial: 'comments/index', :object => @hotel %>
+
+<%= link_to 'Edit', edit_hotel_path(@hotel) %> |
+<%= link_to 'Back', hotels_path %>

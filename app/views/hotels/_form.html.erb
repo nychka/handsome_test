@@ -1,0 +1,50 @@
+<%= simple_form_for(@hotel, :html => {:multipart => true}) do |f| %>
+ 
+<%= render 'shared/error_messages', :target => @hotel %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.input_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :star_rating %><br>
+    <%= f.select(:star_rating, (1..5).to_a) %>
+  </div>
+  <div class="field">
+    <%= f.label :breakfast_included %><br>
+    <%= f.check_box :breakfast_included %>
+  </div>
+  <div class="field">
+    <%= f.label :room_description %><br>
+    <%= f.input_field :room_description %>
+  </div>
+  <div class="field">
+    <%= f.label :photo %><br>
+    <%= f.file_field :photo %>
+  </div>
+  <div class="field">
+    <%= f.label :price_for_room %><br>
+    <%= f.input_field :price_for_room %>
+  </div>
+    <%= f.simple_fields_for :address do |builder| %>
+	<div class="field">
+	<%= builder.label :country %><br>
+	<%= builder.input_field :country, :as => :string %>
+	</div>
+	<div class="field">
+        <%= builder.label :state %><br>
+        <%= builder.input_field :state %>
+        </div>
+	<div class="field">
+        <%= builder.label :city %><br>
+        <%= builder.input_field :city %>
+        </div>
+	<div class="field">
+        <%= builder.label :street %><br>
+        <%= builder.input_field :street %>
+        </div>
+    <% end %>
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

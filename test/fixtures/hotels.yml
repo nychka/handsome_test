@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  star_rating: 2
+  breakfast_included: false
+  room_description: MyString
+  photo: MyString
+  price_for_room: 1.5
+
+two:
+  title: MyString
+  star_rating: 4
+  breakfast_included: false
+  room_description: MyString
+  photo: MyString
+  price_for_room: 1.5
