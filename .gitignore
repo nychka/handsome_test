@@ -19,3 +19,4 @@
 *.[0-9]
 *.ns
 *.save
+/nbproject
