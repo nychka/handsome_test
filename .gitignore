@@ -15,7 +15,6 @@
 /log/*.log
 /tmp
 
-*.lock
 *.[0-9]
 *.ns
 *.save
