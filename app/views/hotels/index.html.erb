@@ -1,13 +1,15 @@
- <%= link_to 'New Hotel', new_hotel_path %>
-
+ 
 <div class="row">
   <% @hotels.each do |hotel| %>
   <div class="col-lg-4">
-    <img class="img-circle" src="<%= hotel.photo_url(:thumb) %>" alt="Generic placeholder image">
-    <h2><%= hotel.title %></h2>
-    <%= link_to 'Show', hotel, class: 'btn btn-primary' %>
+    <%= link_to image_tag(hotel.photo_url(:thumb), class: 'img-circle add-hotel', alt: hotel.title), hotel %>
+    <h3><%= hotel.title %></h3>
   </div><!-- /.col-lg-4 -->
   <% end %>
+  <div class="col-lg-4">
+  <%= link_to(content_tag(:div, content_tag(:span, "", class: "glyphicon glyphicon-plus hotel-plus"),:class => "img-circle add-hotel"), new_hotel_path) %>
+  <h3>Добавити готель</h3>
+</div>
 </div><!-- /.row -->
 
 
