@@ -1,0 +1,47 @@
+<h1>Listing hotels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Avg rate</th>
+      <th>Star rating</th>
+      <th>breakfast included</th>
+      <th>Room description</th>
+      <th>Photo</th>
+      <th>Price for room</th>
+      <th>Country</th>
+      <th>State</th>
+      <th>City</th>
+      <th>Street</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hotels.each do |hotel| %>
+      <tr>
+        <td><%= hotel.title %></td>
+        <td><%= hotel.average_rate %></td>
+        <td><%= hotel.star_rating %></td>
+        <td><%= hotel.breakfast_included %></td>
+        <td><%= hotel.room_description %></td>
+        <td><%= image_tag hotel.photo_url(:thumb) %></td>
+        <td><%= hotel.price_for_room %></td>
+        <td><%= hotel.address.country %></td>
+        <td><%= hotel.address.state %></td>
+        <td><%= hotel.address.city %></td>
+       <td><%= hotel.address.street %></td>
+        <td><%= link_to 'Show', hotel %></td>
+        <td><%= link_to 'Edit', edit_hotel_path(hotel) %></td>
+        <td><%= link_to 'Destroy', hotel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+  <%= link_to 'New Hotel', new_hotel_path %>
+
