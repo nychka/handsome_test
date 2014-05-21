@@ -19,3 +19,4 @@
 *.ns
 *.save
 /nbproject
+/public/uploads

@@ -7,6 +7,10 @@ class HotelsController < ApplicationController
   def index
     @hotels = Hotel.top(5)
   end
+  def all
+    @hotels = Hotel.all
+    render "index"
+  end
 
   # GET /hotels/1
   # GET /hotels/1.json

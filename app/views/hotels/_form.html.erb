@@ -2,46 +2,38 @@
  
 <%= render 'shared/error_messages', :target => @hotel %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.input_field :title %>
+  <div class="form-inputs">
+    <%= f.input :title, input_html: {class: 'form-control'} %>
   </div>
-  <div class="field">
-    <%= f.label :star_rating %><br>
-    <%= f.select(:star_rating, (1..5).to_a) %>
+  <div class="form-inputs">
+    <%= f.select(:star_rating, (1..5).to_a, input_html: {class: 'form-control'}) %>
   </div>
-  <div class="field">
-    <%= f.label :breakfast_included %><br>
-    <%= f.check_box :breakfast_included %>
+  <div class="form-inputs">
+    <%= f.label :breakfast_included %>
+    <%= f.check_box :breakfast_included, input_html: {class: 'controls form-inline'} %>
   </div>
-  <div class="field">
-    <%= f.label :room_description %><br>
-    <%= f.input_field :room_description %>
+  <div class="form-inputs">
+    <%= f.input :room_description, input_html: {class: 'form-control'} %>
   </div>
-  <div class="field">
-    <%= f.label :photo %><br>
-    <%= f.file_field :photo %>
+  <div class="form-inputs">
+    <%= f.label :photo %>
+    <%= f.file_field :photo, input_html: {class: 'form-control'} %>
   </div>
-  <div class="field">
-    <%= f.label :price_for_room %><br>
-    <%= f.input_field :price_for_room %>
+  <div class="form-inputs">
+    <%= f.input :price_for_room, input_html: {class: 'form-control'} %>
   </div>
     <%= f.simple_fields_for :address do |builder| %>
-	<div class="field">
-	<%= builder.label :country %><br>
-	<%= builder.input_field :country, :as => :string %>
+	<div class="form-inputs">
+	<%= builder.input :country, :as => :string, input_html: {class: 'form-control'} %>
 	</div>
-	<div class="field">
-        <%= builder.label :state %><br>
-        <%= builder.input_field :state %>
+	<div class="form-inputs">
+        <%= builder.input :state, input_html: {class: 'form-control'} %>
         </div>
-	<div class="field">
-        <%= builder.label :city %><br>
-        <%= builder.input_field :city %>
+	<div class="form-inputs">
+        <%= builder.input :city, input_html: {class: 'form-control'} %>
         </div>
-	<div class="field">
-        <%= builder.label :street %><br>
-        <%= builder.input_field :street %>
+	<div class="form-inputs">
+        <%= builder.input :street, input_html: {class: 'form-control'} %>
         </div>
     <% end %>
   <div class="actions">

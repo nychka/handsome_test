@@ -12,6 +12,7 @@
  *= require_self
  *= require_tree .
  */
+ @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
 .comment {
 	box-shadow: 1px 5px whitesmoke;
 	border: 1px solid #ccc;
@@ -40,10 +41,10 @@
 }
 .navbar {margin: 0px;}
 .hotel-plus {
-	top: 50px;
-	left: 60px;
+	top: 53px;
+	left: 58px;
 	font-weight: 400;
-	font-size: 50px;
+	font-size: 40px;
 }
 .row {padding: 85px;}
 

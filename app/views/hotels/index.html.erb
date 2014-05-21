@@ -4,12 +4,13 @@
   <div class="col-lg-4">
     <%= link_to image_tag(hotel.photo_url(:thumb), class: 'img-circle add-hotel', alt: hotel.title), hotel %>
     <h3><%= hotel.title %></h3>
+    <h4 class="glyphicon glyphicon-thumbs-up"><%= hotel.average_rate %></h4>
   </div><!-- /.col-lg-4 -->
   <% end %>
   <div class="col-lg-4">
-  <%= link_to(content_tag(:div, content_tag(:span, "", class: "glyphicon glyphicon-plus hotel-plus"),:class => "img-circle add-hotel"), new_hotel_path) %>
-  <h3>Добавити готель</h3>
-</div>
+  	<%= link_to(content_tag(:div, content_tag(:span, "", class: "glyphicon glyphicon-plus hotel-plus"),:class => "img-circle add-hotel"), new_hotel_path, id: 'add-hotel') %>
+  	<h3>Добавити готель</h3>
+  </div>
 </div><!-- /.row -->
 
 

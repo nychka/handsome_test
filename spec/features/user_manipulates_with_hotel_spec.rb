@@ -10,16 +10,8 @@ feature "User manipulates with hotel" do
     expect(page).to have_content 'Hotel was successfully created.'
   end
   
-  scenario "user sees hotel", :js => false do
-    create_hotel
-    visit hotels_path
-    click_link 'Show'
-    expect(page).to have_content 'New comment'
-    click_link 'Back'
-    expect(page).to have_content 'Listing hotels'
-  end
-  
   scenario "user edits hotel", :js => false do
+    pending "This feature is not in list"
     hotel = build(:hotel)
     address = build(:address)
     create_hotel
@@ -41,11 +33,12 @@ feature "User manipulates with hotel" do
     expect(page).to have_content 'Hotel was successfully updated.'
   end
   
-  scenario "user destroys hotel", :js => true do
+  scenario "user destroys hotel",:js => false do
+    pending "This feature is not in list"
     create_hotel
     visit hotels_path
     click_link 'Destroy'
     page.driver.browser.switch_to.alert.accept
-    expect(page).to have_content 'Listing hotels'
+    expect(page).to have_content 'Добавити готель'
   end
 end
