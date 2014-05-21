@@ -1,26 +1,8 @@
-<h1>Listing comments for hotel <%= @hotel.title %></h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Comment</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @hotel.comments.each do |comment| %>
-      <tr>
-        <td><%= comment.comment %></td>
-        <td><%= comment.user_id %></td>
-      </tr>
+      <div class="comment">
+        <span class="col-md-3"><%= comment.user %></span>
+        <span class="col-md-9"><%= comment.comment %></span>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
 
 

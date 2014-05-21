@@ -1,12 +1,10 @@
-<h1>New comment</h1>
-
-<%= simple_form_for([@hotel, @comment]) do |f| %>
+<%= simple_form_for([@hotel, @comment], html: {class: 'form-vertical'}) do |f| %>
   <div class="form-inputs">
-    <%= f.input :comment, :as => :text %>
+    <%= f.input :comment,label: false, placeholder: 'Leave your comment', :as => :text %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
   </div>
 <% end %>
 

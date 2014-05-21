@@ -12,6 +12,25 @@
  *= require_self
  *= require_tree .
  */
+.comment {
+	box-shadow: 1px 5px whitesmoke;
+	border: 1px solid #ccc;
+	position: relative;
+	border-radius: 5px;
+	margin: 10px 0px 10px 0px;
+	font-size: 12px;
+	min-height: 2em;
+}
+.hotels {margin: 60px;}
+.hotel {
+	width: 800px;
+	margin: 0 auto;
+	background-color: #fff;
+	border: 1px solid whitesmoke;
+	margin-top: 10px;
+	border-radius: 10px;
+	padding: 15px;
+}
 
 .add-hotel {
 	width: 150px;
@@ -19,6 +38,7 @@
 	background-color: whitesmoke;
 	box-shadow: 1px 2px #ccc;
 }
+.navbar {margin: 0px;}
 .hotel-plus {
 	top: 50px;
 	left: 60px;

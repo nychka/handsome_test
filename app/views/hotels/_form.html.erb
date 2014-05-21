@@ -1,4 +1,4 @@
-<%= simple_form_for(@hotel, :html => {:multipart => true}) do |f| %>
+<%= simple_form_for(@hotel, html: {multipart: true, class: 'form-horizontal'}) do |f| %>
  
 <%= render 'shared/error_messages', :target => @hotel %>
 
@@ -45,6 +45,6 @@
         </div>
     <% end %>
   <div class="actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
   </div>
 <% end %>

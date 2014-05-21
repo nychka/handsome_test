@@ -1,0 +1,9 @@
+  <%= simple_form_for([@hotel, @rating]) do |f|%>
+    <% if @rating.rate %>
+      <h3>Ваша оцінка: <%= @rating.rate %></h3>
+    <% else %>
+    	<h3>Оцініть готель: </h3>
+      <%= f.select(:rate, (1..5).to_a) %>
+      <%= f.button :submit,value: 'Rate', class: 'btn btn-success' %>
+    <% end %>
+  <% end %>

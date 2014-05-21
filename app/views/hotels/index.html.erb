@@ -1,5 +1,5 @@
  
-<div class="row">
+<div class="hotels">
   <% @hotels.each do |hotel| %>
   <div class="col-lg-4">
     <%= link_to image_tag(hotel.photo_url(:thumb), class: 'img-circle add-hotel', alt: hotel.title), hotel %>

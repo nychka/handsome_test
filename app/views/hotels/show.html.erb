@@ -1,10 +1,21 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @hotel.title %>
-</p>
+<div class="hotel">
 
+
+<div class="col-md-4">
+ <%= image_tag @hotel.photo_url(:thumb), class: 'img-circle' %>
+ <div>
+   <%= render partial: 'ratings/new', :object => [@hotel, @rating] %>
+ </div>
+</div>
+<div class="col-md-8">
+  <h2><%= @hotel.title %></h2>
+
+  <!-- /div -->
+  <p>
+    <strong>Price for room:</strong>
+    <%= @hotel.price_for_room %>
+  </p>
 <p>
   <strong>Star rating:</strong>
   <%= @hotel.star_rating %>
@@ -19,51 +30,32 @@
   <strong>Room description:</strong>
   <%= @hotel.room_description %>
 </p>
+  <p>
+    <strong>Country:</strong>
+    <%= @hotel.address.country %>
+  </p>
 
-<p>
-  <strong>Photo:</strong>
-  <%= image_tag @hotel.photo_url(:thumb) %>
-</p>
+  <p>
+    <strong>State:</strong>
+    <%= @hotel.address.state %>
+  </p>
 
-<p>
-  <strong>Price for room:</strong>
-  <%= @hotel.price_for_room %>
-</p>
+  <p>
+    <strong>City:</strong>
+    <%= @hotel.address.city %>
+  </p>
 
-<p>
-  <strong>Country:</strong>
-  <%= @hotel.address.country %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @hotel.address.state %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @hotel.address.city %>
-</p>
-
-<p>
-  <strong>Street:</strong>
-  <%= @hotel.address.street %>
-</p>
-
-<div>
-  <h3>Оцініть готель:</h3>
-  <%= form_for([@hotel, @rating]) do |f|%>
-    <% if @rating.rate %>
-      <p><%= @rating.rate %></p>
-    <% else %>
-      <%= f.select(:rate, (1..5).to_a) %>
-      <%= f.submit %>
-    <% end %>
-  <% end %>
+  <p>
+    <strong>Street:</strong>
+    <%= @hotel.address.street %>
+  </p>
 </div>
 
-<%= render partial: 'comments/new', :object => [@hotel, @comment]  %>
-<%= render partial: 'comments/index', :object => @hotel %>
 
-<%= link_to 'Edit', edit_hotel_path(@hotel) %> |
-<%= link_to 'Back', hotels_path %>
+<div class="comments">
+  <%= render partial: 'comments/new', :object => [@hotel, @comment]  %>
+  <%= render partial: 'comments/index', :object => @hotel %>
+</div>
+
+<%= link_to 'Back', hotels_path, class: 'btn btn-link' %>
+</div>
